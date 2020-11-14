@@ -31,7 +31,7 @@
                                     <strong class="messages-title">RT Bot</strong>
                                 </div>
                                 <p class="messages-p">
-                                    Hello
+                                    Здравствуйте, чем я могу вам помочь?
                                 </p>
                             </div>
                         </li>
@@ -44,7 +44,7 @@
                                     <strong class="messages-title">Me</strong>
                                 </div>
                                 <p class="messages-p">
-                                    Hi
+                                    Привет
                                 </p>
                             </div>
                         </li>
@@ -69,16 +69,6 @@
 
 
 </div>
-<script type="text/javascript">
-
-$('#send-message').on('submit', function (event) {
-    event.preventDefault();
-    var message = $('.messages-me').first().clone();
-    message.find('p').text($('#input-me').val());
-    $('#input-me').val('');
-    message.appendTo('.messages-list');
-});
-
-</script>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
