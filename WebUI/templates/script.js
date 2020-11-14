@@ -1,3 +1,7 @@
+var years = prompt('Ввыедите ваш логин?', 'NonAuthorized');
+
+
+
 $('#send-message').on('submit', function (event) {
     event.preventDefault();
     var message = $('.messages-me').first().clone();
@@ -11,7 +15,7 @@ $('#send-message').on('submit', function (event) {
     let my_post = $.ajax({
       url: 'http://localhost:5000/ai-quotes',
       type: "POST",
-      data: {"id": 11, "author": "Kevin Kelly",
+      data: {"id": 11, "author": years,
         "quote": client_meesage},
     });
     // let my_get = $.ajax({
