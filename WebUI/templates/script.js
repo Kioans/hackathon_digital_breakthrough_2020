@@ -39,26 +39,27 @@ $('#send-message').on('submit', function (event) {
 
         let bot_message;
         let answ_message;
-        for (let i = 0; i < 550; i++) {
+        for (let i = 0; i < 565; i++) {
             let str = data[i]['Обращение']
             // console.log(client_meesage)
             // console.log(str.indexOf(client_meesage))
             if (str.indexOf(client_meesage) !== -1) {
-                bot_message = data[i]['Ссылка']
-                console.log(bot_message)
-                answ_message = "Я нашел для вас ответ\n" + bot_message
+                bot_message = data[i]['Ссылка'];
+                // console.log(bot_message)
+                answ_message = "Я нашел для вас ответ\n"  + bot_message
                 break;
             }
 
         if (bot_message !== undefined){
         answ_message = "Я нашел для вас ответ" + bot_message
         } else {
-            answ_message = "Попобуйте обратиться в тех поддержду, на данный момент у меня нет ответа на ваш вопрос."
+            answ_message = "Попобуйте обратиться в тех поддержку, на данный момент у меня нет ответа на ваш вопрос. 8 800 100 0 800. https://rt.ru/support "
         }
         }
 
     messagee.find('p').text(answ_message);
     messagee.appendTo('.messages-list');
+
     });
 
 });
