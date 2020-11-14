@@ -13,7 +13,7 @@ $('#send-message').on('submit', function (event) {
 
     var messagee = $('.messages-you').first().clone();
     let my_post = $.ajax({
-      url: 'http://localhost:5000/ai-quotes',
+      url: 'http://127.0.0.1:5000/ai-quotes',
       type: "POST",
       data: {"id": 11, "author": years,
         "quote": client_meesage},
