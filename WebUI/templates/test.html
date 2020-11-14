@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Bot chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link type="text/css" href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12 text-center pt-3">
+            <h1>Chat</h1>
+        </div>
+    </div>
+    <div class="row justify-content-md-center mb-4">
+        <div class="col-md-6">
+            <div class="card">
+
+                <div class="card-body messages-box">
+                    <ul class="list-unstyled messages-list">
+                        <li class="messages-you clearfix">
+<!--                            <span class="message-img img-circle">-->
+<!--                                <img src="" alt="Bot Avatar" class="avatar-sm border rounded-circle">-->
+<!--                            </span>-->
+                            <div class="message-body clearfix">
+                                <div class="message-header">
+                                    <strong class="messages-title">RT Bot</strong>
+                                </div>
+                                <p class="messages-p">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                    dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="messages-me clearfix">
+<!--                            <span class="message-img">-->
+<!--                                <img src="" alt="User Avatar" class="avatar-sm border rounded-circle">-->
+<!--                            </span>-->
+                            <div class="message-body clearfix">
+                                <div class="message-header">
+                                    <strong class="messages-title">Me</strong>
+                                </div>
+                                <p class="messages-p">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                    dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="card-header">
+                    <form id="send-message" class="send-message-form">
+                        <div class="input-group">
+                            <input id="input-me" type="text" name="messages" class="form-control input-sm" placeholder="Type your message here..." />
+                            <span class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Send <i class="fas fa-airplane"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        	<!--end code-->
+
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript">
+
+$('#send-message').on('submit', function (event) {
+    event.preventDefault();
+    var message = $('.messages-me').first().clone();
+    message.find('p').text($('#input-me').val());
+    $('#input-me').val('');
+    message.appendTo('.messages-list');
+    message.find('.minutes').text("0");
+});
+</script>
+</body>
+</html>
