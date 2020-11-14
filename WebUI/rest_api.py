@@ -11,7 +11,7 @@ api = Api(app)
 x = 100
 with open('db.json', 'r', encoding='utf-8') as f:
     text = json.load(f)
-
+    x += len(text)
 print(text)
 
 
