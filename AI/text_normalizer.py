@@ -65,14 +65,14 @@ def make_labels(y_data, unique):
 
 def get_normalized_words():
     data_frame = pandas.read_excel(io='dataset.xlsx',
-                                  engine='openpyxl',
-                                  usecols='A:B')
+                                   engine='openpyxl',
+                                   usecols='A:B',
+                                   sheet_name="WithoutAdds")
 
     y_data = list(data_frame.loc[:, 'answers'])
     x_data_unfiltered = list(data_frame.loc[:, 'question'])
 
-    y_data.pop(564)
-    x_data_unfiltered.pop(564)
+    print(y_data)
 
     y_unique_values = set(y_data)
     y_unique_values = list(y_unique_values)
@@ -91,7 +91,7 @@ def get_normalized_words():
 
     data = [(x_data[i], y_data[i]) for i in range(0, len(x_data))]
     x_data_df = pandas.DataFrame(data)
-    x_data_df.to_excel('output.xlsx')
+    x_data_df.to_excel('input.xlsx')
     y_labels_df = pandas.DataFrame(list(y_labels.keys()))
     y_labels_df.to_excel('labels.xlsx')
 
