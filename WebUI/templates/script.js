@@ -7,7 +7,7 @@ $('#send-message').on('submit', function (event) {
     var message = $('.messages-me').first().clone();
     message.find('p').text($('#input-me').val());
     let client_meesage = $('#input-me').val();
-    console.log(client_meesage)
+    // console.log(client_meesage)
     $('#input-me').val('');
     message.appendTo('.messages-list');
 
@@ -41,9 +41,8 @@ $('#send-message').on('submit', function (event) {
         let answ_message;
         for (let i = 0; i < 550; i++) {
             let str = data[i]['Обращение']
-
-            console.log(client_meesage)
-            console.log(str.indexOf(client_meesage))
+            // console.log(client_meesage)
+            // console.log(str.indexOf(client_meesage))
             if (str.indexOf(client_meesage) !== -1) {
                 bot_message = data[i]['Ссылка']
                 console.log(bot_message)
